@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<!-- TODO target multiple frameword if needed -->
+		<TargetFrameworks>netstandard1.1;netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<LessThanNetStandard20 Condition="'$(TargetFramework)' == 'netstandard1.1'">true</LessThanNetStandard20>
+		<DefineConstants Condition="'$(LessThanNetStandard20)' == 'true'">$(DefineConstants);LESS_THAN_NETSTANDARD2_0</DefineConstants>
+
+		<LessThanNetStandard21 Condition="'$(LessThanNetStandard20)' == 'true' Or '$(TargetFramework)' == 'netstandard2.0'">true</LessThanNetStandard21>
+		<DefineConstants Condition="'$(LessThanNetStandard21)' == 'true'">$(DefineConstants);LESS_THAN_NETSTANDARD2_1</DefineConstants>
+
+		<LessThanNet6 Condition="'$(LessThanNetStandard21)' == 'true' Or '$(TargetFramework)' == 'netstandard2.1'">true</LessThanNet6>
+		<DefineConstants Condition="'$(LessThanNet6)' == 'true'">$(DefineConstants);LESS_THAN_NET6_0</DefineConstants>
+
+		<LangVersion Condition="'$(LessThanNet6)' == 'true'">10.0</LangVersion>
+
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Memory" Version="4.5.4" Condition="'$(LessThanNetStandard21)' == 'true'" />
+		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" Condition="'$(TargetFramework)' == 'netstandard2.1'" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Cloudlucky.GuardClauses.SourceGeneration\Cloudlucky.GuardClauses.SourceGeneration.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" Condition="'$(TargetFramework)' != 'netstandard1.1'" />
+	</ItemGroup>
+
+</Project>

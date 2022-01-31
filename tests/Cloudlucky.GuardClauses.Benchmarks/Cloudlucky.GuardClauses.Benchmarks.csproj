@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+		<PackageReference Include="Dawn.Guard" Version="1.12.0" />
+		<PackageReference Include="Light.GuardClauses" Version="10.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Cloudlucky.GuardClauses\Cloudlucky.GuardClauses.csproj" />
+	</ItemGroup>
+
+</Project>
