@@ -20,6 +20,25 @@
 		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<PackageReleaseNotes>First release</PackageReleaseNotes>
+		<Version>1.0.0-beta</Version>
+
+		<PackageId>Cloudlucky.GuardClauses</PackageId>
+		<Title>Cloudlucky.GuardClauses</Title>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Kevin Martin</Authors>
+		<PackageProjectUrl>https://github.com/cloudlucky/GuardClauses</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/cloudlucky/GuardClauses</RepositoryUrl>
+		<Description>A guard clauses package.</Description>
+		<Summary>A guard clauses package.</Summary>
+		<PackageTags>guard check precondition preconditions postcondition postconditions</PackageTags>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
+
+
 	<ItemGroup>
 		<PackageReference Include="System.Memory" Version="4.5.4" Condition="'$(LessThanNetStandard21)' == 'true'" />
 		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" Condition="'$(TargetFramework)' == 'netstandard2.1'" />
