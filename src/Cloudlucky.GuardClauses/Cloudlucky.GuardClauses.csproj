@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<!-- TODO target multiple frameword if needed -->
 		<TargetFrameworks>netstandard1.1;netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 
@@ -22,7 +21,7 @@
 
 	<PropertyGroup>
 		<PackageReleaseNotes>First release</PackageReleaseNotes>
-		<Version>1.0.0-beta</Version>
+		<Version>1.0.1-beta</Version>
 
 		<PackageId>Cloudlucky.GuardClauses</PackageId>
 		<Title>Cloudlucky.GuardClauses</Title>

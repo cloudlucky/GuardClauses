@@ -4,16 +4,7 @@ using System.Runtime.Serialization;
 
 namespace Cloudlucky.GuardClauses.Exceptions;
 
-public interface IGuardException
-{
-    Exception? InnerException { get; }
-
-    string Message { get; }
-
-    string? StackTrace { get; }
-}
-
-public class GuardException : Exception, IGuardException
+public class GuardException : Exception
 {
     public GuardException()
         : base(ErrorMessages.GetGenericErrorMessage())

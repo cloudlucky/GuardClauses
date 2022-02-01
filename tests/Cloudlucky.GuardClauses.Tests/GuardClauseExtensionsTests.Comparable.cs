@@ -18,6 +18,11 @@ public class GuardClauseExtensions_ComparableTests
         Guard.Against.OutOfRange(0, -1, 1, (x, y) => x.CompareTo(y));
         Guard.Against.OutOfRange(0, Range.FromInclusive(-1).ToInclusive(1));
 
+        Guard.Against.OutOfRange(0, 0, 1, RangeLimit.FromInclusiveToExclusive);
+        Assert.Throws<ArgumentOutOfRangeException>(() => Guard.Against.OutOfRange(1, 0, 1, RangeLimit.FromInclusiveToExclusive));
+        Guard.Against.OutOfRange(1, 0, 1, RangeLimit.FromExclusiveToInclusive);
+        Assert.Throws<ArgumentOutOfRangeException>(() => Guard.Against.OutOfRange(0, 0, 1, RangeLimit.FromExclusiveToInclusive));
+
         Assert.True(true);
     }
 

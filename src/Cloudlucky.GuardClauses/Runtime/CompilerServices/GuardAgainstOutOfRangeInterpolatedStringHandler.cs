@@ -52,6 +52,90 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, byte input, byte from, byte to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, byte input, byte from, byte to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, byte input, byte from, byte to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, sbyte input, sbyte from, sbyte to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, sbyte input, sbyte from, sbyte to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, sbyte input, sbyte from, sbyte to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, sbyte input, sbyte from, sbyte to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -83,6 +167,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, sbyte input, sbyte from, sbyte to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, short input, short from, short to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, short input, short from, short to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, short input, short from, short to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -136,6 +262,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, ushort input, ushort from, ushort to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, ushort input, ushort from, ushort to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, ushort input, ushort from, ushort to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, ushort input, ushort from, ushort to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -167,6 +335,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, ushort input, ushort from, ushort to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, int input, int from, int to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, int input, int from, int to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, int input, int from, int to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -220,6 +430,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, uint input, uint from, uint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, uint input, uint from, uint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, uint input, uint from, uint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, uint input, uint from, uint to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -251,6 +503,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, uint input, uint from, uint to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, nint input, nint from, nint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, nint input, nint from, nint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, nint input, nint from, nint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -304,6 +598,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, nuint input, nuint from, nuint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, nuint input, nuint from, nuint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, nuint input, nuint from, nuint to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, nuint input, nuint from, nuint to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -335,6 +671,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, nuint input, nuint from, nuint to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, long input, long from, long to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, long input, long from, long to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, long input, long from, long to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -388,6 +766,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, ulong input, ulong from, ulong to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, ulong input, ulong from, ulong to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, ulong input, ulong from, ulong to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, ulong input, ulong from, ulong to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -419,6 +839,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, ulong input, ulong from, ulong to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, float input, float from, float to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, float input, float from, float to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, float input, float from, float to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -472,6 +934,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, double input, double from, double to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, double input, double from, double to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, double input, double from, double to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, double input, double from, double to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -503,6 +1007,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, double input, double from, double to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, decimal input, decimal from, decimal to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, decimal input, decimal from, decimal to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, decimal input, decimal from, decimal to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -556,6 +1102,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, DateTime input, DateTime from, DateTime to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, DateTime input, DateTime from, DateTime to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, DateTime input, DateTime from, DateTime to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, DateTime input, DateTime from, DateTime to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -587,6 +1175,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, DateTime input, DateTime from, DateTime to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, DateOnly input, DateOnly from, DateOnly to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, DateOnly input, DateOnly from, DateOnly to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, DateOnly input, DateOnly from, DateOnly to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -640,6 +1270,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, TimeOnly input, TimeOnly from, TimeOnly to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, TimeOnly input, TimeOnly from, TimeOnly to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, TimeOnly input, TimeOnly from, TimeOnly to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, TimeOnly input, TimeOnly from, TimeOnly to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
@@ -671,6 +1343,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, TimeOnly input, TimeOnly from, TimeOnly to, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, TimeSpan input, TimeSpan from, TimeSpan to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, TimeSpan input, TimeSpan from, TimeSpan to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, TimeSpan input, TimeSpan from, TimeSpan to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
@@ -775,6 +1489,48 @@ public ref partial struct GuardAgainstOutOfRangeComparableInterpolatedStringHand
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeComparableInterpolatedStringHandler(int literalLength, int formattedCount, TInput input, TInput from, TInput to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeComparableInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, TInput input, TInput from, TInput to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeComparableInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, TInput input, TInput from, TInput to, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeComparableInterpolatedStringHandler(int literalLength, int formattedCount, TInput input, in ComparableRange<TInput> range, out bool shouldAppend)
     {
         if (input.IsOutOfRange(range))
@@ -867,6 +1623,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler<TInput
         shouldAppend = false;
     }
 
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, TInput input, TInput from, TInput to, Comparison<TInput> comparison, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, comparison, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, TInput input, TInput from, TInput to, Comparison<TInput> comparison, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, comparison, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, TInput input, TInput from, TInput to, Comparison<TInput> comparison, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, comparison, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, TInput input, TInput from, TInput to, IComparer<TInput> comparer, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to, comparer))
@@ -898,6 +1696,48 @@ public ref partial struct GuardAgainstOutOfRangeInterpolatedStringHandler<TInput
     public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, TInput input, TInput from, TInput to, IComparer<TInput> comparer, out bool shouldAppend)
     {
         if (input.IsOutOfRange(from, to, comparer))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, TInput input, TInput from, TInput to, IComparer<TInput> comparer, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, comparer, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, TInput input, TInput from, TInput to, IComparer<TInput> comparer, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, comparer, rangeLimit))
+        {
+            this.IsOutOfRange = true;
+            this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider);
+            shouldAppend = true;
+            return;
+        }
+
+        this.innerHandler = default;
+        shouldAppend = false;
+    }
+
+    public GuardAgainstOutOfRangeInterpolatedStringHandler(int literalLength, int formattedCount, IFormatProvider? provider, Span<char> initialBuffer, TInput input, TInput from, TInput to, IComparer<TInput> comparer, RangeLimit rangeLimit, out bool shouldAppend)
+    {
+        if (input.IsOutOfRange(from, to, comparer, rangeLimit))
         {
             this.IsOutOfRange = true;
             this.innerHandler = new GuardInterpolatedStringHandler(literalLength, formattedCount, provider, initialBuffer);

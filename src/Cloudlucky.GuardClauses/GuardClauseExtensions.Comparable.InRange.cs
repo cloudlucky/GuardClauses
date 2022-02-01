@@ -8,8 +8,8 @@ namespace Cloudlucky.GuardClauses;
 public static partial class GuardClauseExtensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, byte input, byte from, byte to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, byte input, byte from, byte to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -19,11 +19,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, byte input, byte from, byte to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, sbyte input, sbyte from, sbyte to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, sbyte input, sbyte from, sbyte to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -33,11 +39,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, sbyte input, sbyte from, sbyte to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, short input, short from, short to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, short input, short from, short to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -47,11 +59,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, short input, short from, short to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, ushort input, ushort from, ushort to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, ushort input, ushort from, ushort to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -61,11 +79,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, ushort input, ushort from, ushort to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, int input, int from, int to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, int input, int from, int to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -75,11 +99,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, int input, int from, int to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, uint input, uint from, uint to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, uint input, uint from, uint to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -89,10 +119,16 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, uint input, uint from, uint to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, nint input, nint from, nint to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, nint input, nint from, nint to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -102,25 +138,31 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
-#endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, nuint input, nuint from, nuint to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
-         ? throw options.GetInRangeException().Invoke(message, parameterName)
-         : guard;
-
-#if NET6_0_OR_GREATER
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, nuint input, nuint from, nuint to, [InterpolatedStringHandlerArgument("input", "from", "to")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+    public static IGuardClause InRange(this IGuardClause guard, nint input, nint from, nint to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, long input, long from, long to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, nuint input, nuint from, nuint to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
+         ? throw options.GetInRangeException().Invoke(message, parameterName)
+         : guard;
+
+#if NET6_0_OR_GREATER
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, nuint input, nuint from, nuint to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
+#endif
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, long input, long from, long to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -130,11 +172,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, long input, long from, long to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, ulong input, ulong from, ulong to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, ulong input, ulong from, ulong to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -144,11 +192,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, ulong input, ulong from, ulong to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, float input, float from, float to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, float input, float from, float to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -158,11 +212,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, float input, float from, float to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, double input, double from, double to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, double input, double from, double to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -172,11 +232,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, double input, double from, double to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, decimal input, decimal from, decimal to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, decimal input, decimal from, decimal to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -186,11 +252,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, decimal input, decimal from, decimal to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, DateTime input, DateTime from, DateTime to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, DateTime input, DateTime from, DateTime to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -200,12 +272,18 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, DateTime input, DateTime from, DateTime to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
 #if NET6_0_OR_GREATER
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, DateOnly input, DateOnly from, DateOnly to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, DateOnly input, DateOnly from, DateOnly to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -216,8 +294,14 @@ public static partial class GuardClauseExtensions
          : guard;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, TimeOnly input, TimeOnly from, TimeOnly to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, DateOnly input, DateOnly from, DateOnly to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, TimeOnly input, TimeOnly from, TimeOnly to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -226,11 +310,17 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, TimeOnly input, TimeOnly from, TimeOnly to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange(this IGuardClause guard, TimeSpan input, TimeSpan from, TimeSpan to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to)
+    public static IGuardClause InRange(this IGuardClause guard, TimeSpan input, TimeSpan from, TimeSpan to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -240,12 +330,18 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange(this IGuardClause guard, TimeSpan input, TimeSpan from, TimeSpan to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
         where T : IComparable<T>
-        => input.IsInRange(from, to)
+        => input.IsInRange(from, to, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -256,11 +352,18 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "rangeLimit")] ref GuardAgainstInRangeComparableInterpolatedStringHandler<T> message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        where T : IComparable<T>
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, Comparison<T> comparison, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to, comparison)
+    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, Comparison<T> comparison, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, comparison, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
@@ -270,17 +373,29 @@ public static partial class GuardClauseExtensions
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, Comparison<T> comparison, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "comparison", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler<T> message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
 #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, IComparer<T> comparer, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
-        => input.IsInRange(from, to, comparer)
+    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, IComparer<T> comparer, RangeLimit rangeLimit = default, string? message = default, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => input.IsInRange(from, to, comparer, rangeLimit)
          ? throw options.GetInRangeException().Invoke(message, parameterName)
          : guard;
 
 #if NET6_0_OR_GREATER
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, IComparer<T> comparer, [InterpolatedStringHandlerArgument("input", "from", "to", "comparer")] ref GuardAgainstInRangeInterpolatedStringHandler<T> message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
+        => message.IsInRange
+         ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
+         : guard;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static IGuardClause InRange<T>(this IGuardClause guard, T input, T from, T to, IComparer<T> comparer, RangeLimit rangeLimit, [InterpolatedStringHandlerArgument("input", "from", "to", "comparer", "rangeLimit")] ref GuardAgainstInRangeInterpolatedStringHandler<T> message, InRangeOptions? options = default, [CallerArgumentExpression("input")] string? parameterName = default)
         => message.IsInRange
          ? throw options.GetInRangeException().Invoke(message.ToString(), parameterName)
          : guard;

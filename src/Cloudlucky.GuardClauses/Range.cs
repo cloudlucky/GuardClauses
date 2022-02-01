@@ -8,7 +8,7 @@ public interface IRange<in T>
 }
 
 public readonly record struct ComparableRange<T> : IRange<T>
-        where T : IComparable<T>
+    where T : IComparable<T>
 {
     private readonly int compareFromValue;
     private readonly int compareToValue;
@@ -147,8 +147,8 @@ public static class RangeValueExtensions
         => To(from, value, false);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ComparisonRange<T> To<T>(this RangeValue<T> from, T value, bool includeValue, Comparison<T> comparison)
-        => new(from, new(value, includeValue), comparison);
+    public static ComparisonRange<T> To<T>(this RangeValue<T> from, T value, bool inclusive, Comparison<T> comparison)
+        => new(from, new(value, inclusive), comparison);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static ComparisonRange<T> ToInclusive<T>(this RangeValue<T> from, T value, Comparison<T> comparison)
@@ -159,8 +159,8 @@ public static class RangeValueExtensions
         => To(from, value, false, comparison);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ComparerRange<T> To<T>(this RangeValue<T> from, T value, bool includeValue, IComparer<T> comparer)
-        => new(from, new(value, includeValue), comparer);
+    public static ComparerRange<T> To<T>(this RangeValue<T> from, T value, bool inclusive, IComparer<T> comparer)
+        => new(from, new(value, inclusive), comparer);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static ComparerRange<T> ToInclusive<T>(this RangeValue<T> from, T value, IComparer<T> comparer)
